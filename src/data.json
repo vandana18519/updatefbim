@@ -1,89 +1,49 @@
-[
+
     {
         "_id": "req_611a0824cd4b4794a250e986669d4835_A",
         "model": "Firebim_sample_A.rvt",
         "last_update": "2019-03-06T22:24:30.310Z",
         "image": "/Image/img1.png",
-            "params": [
-                        {
-                        
-                            "Floor":[
-                                            {
-                                                "element_id": "123",
-                                                "element": "Floor",						
-                                                "Property": "Firerating 90mins",
-                                                "result": "Pass",
-                                                "remark": "It fufils the requirements"
-                                            },
-                                            {
-                                                "element_id": "123",
-                                                "element": "Floor",
-                                                "Property": "Firerating 60mins",
-                                                "result": "Fail",
-                                                "remark": "It didn't meet the requirements of 90mins required for top floor of 75M"
-                                        }
-                                    ]
-                            },{
-                                "Beam":
-                                        [
-                                                {
-                                                    "element_id": "123",
-                                                    "element": "Beam",						
-                                                    "Property": "Firerating 90mins",
-                                                    "result": "Pass",
-                                                    "remark": "It fufils the requirements"
-                                                },
-                                                {
-                                                    "element_id": "123",
-                                                    "element": "Beam",
-                                                    "Property": "Firerating 60mins",
-                                                    "result": "Fail",
-                                                    "remark": "It didn't meet the requirements of 90mins required for top floor of 75M"
-                                                }
-                                        ]
-                            
-                            },{
-                                "Walls":
-                                        [
-                                                {
-                                                    "element_id": "123",
-                                                    "element": "Wall",						
-                                                    "Property": "Firerating 90mins",
-                                                    "result": "Pass",
-                                                    "remark": "It fufils the requirements"
-                                                },
-                                                {
-                                                    "element_id": "123",
-                                                    "element": "Wall",
-                                                    "Property": "Firerating 60mins",
-                                                    "result": "Fail",
-                                                    "remark": "It didn't meet the requirements of 90mins required for top floor of 75M"
-                                                }
-                                        ]
-                                },{
-                            
-                                "xyz":
-                                        [
-                                                {
-                                                    "element_id": "123",
-                                                    "element": "xyz",						
-                                                    "Property": "Firerating 90mins",
-                                                    "result": "Pass",
-                                                    "remark": "It fufils the requirements"
-                                                },
-                                                {
-                                                    "element_id": "123",
-                                                    "element": "xyz",
-                                                    "Property": "Firerating 60mins",
-                                                    "result": "Fail",
-                                                    "remark": "It didn't meet the requirements of 90mins required for top floor of 75M"
-                                                }
-                                        ]
-                                }
-                         
-                    ]
+        "params": [{
+            "count" : "0",
+            "element_id": "1111",
+            "element": "Floor",						
+            "Property": "Firerating 90mins",
+            "result": "Fail",
+            "remark": "It not fufils the requirements"
+
+        },{
+            "count" : "1",
+            "element_id": "2",
+            "element": "Beam",						
+            "Property": "Firerating 60mins",
+            "result": "Fail",
+            "remark": "It not fufils the requirements"
+
+        },{
+            "count" : "2",
+            "element_id": "3",
+            "element": "Wall",						
+            "Property": "Firerating 30mins",
+            "result": "Pass",
+            "remark": "It fufils the requirements"
+
+        },{
+            "count" : "3",
+            "element_id": "4",
+            "element": "Floor",						
+            "Property": "Firerating 20mins",
+            "result": "Pass",
+            "remark": "It fufils the requirements"
+
+        },{
+            "count" : "4",
+            "element_id": "5",
+            "element": "Column",						
+            "Property": "Firerating 10mins",
+            "result": "Pass",
+            "remark": "It fufils the requirements"
+
+        }]
     }
-    
-    
-                
-]
+                   

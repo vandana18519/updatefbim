@@ -4,17 +4,19 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import ExpandLess from "@mui/icons-material/ExpandLess";
 import InsideDSS from "./InsideDSS";
 import TableHead from '@mui/material/TableHead';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
-import Fire_rating from "./dss/Fire_rating";
+import FireRating from "./dss/FireRating";
 import Sprinkler from "./dss/Sprinkler";
+import Compartment from "./dss/Compartment";
+import FireDoor from "./dss/FireDoor";
 
 export const Dss= (props) => {
-  // const [elementName, setElementName] = useState("");
   const dss_data = [
     {
       data:"Fire Rating"
@@ -41,25 +43,47 @@ export const Dss= (props) => {
       data:"Fire services and access"
     }
   ];
-  
+  const [open, setOpen] = useState(false);
+  const handleClick = (props) => {
+    
+      setOpen(!open);
+ 
+  };
+  const displayAll = (props) => {
+    
+        if(props == "Fire Rating"){
+          return(
+            <FireRating/>
+          )
+        } if(props == "Sprinkler"){
+          return(
+            <Sprinkler/>
+          )
+        } if(props == "Compartment"){
+          return(
+            <Compartment/>
+          )
+        } if(props == "Firedoor"){
+          return(
+            <FireDoor/>
+          )
+        }
+  };
   const getAlldss = () => {
     return dss_data.map((cur) => {
-
-      console.log("Print: ",cur.data);
       return(
       <>
-         <ListItemButton style={{ background: "#DAF3FF" }}>
+         <ListItemButton onClick={() => handleClick(cur.data)} style={{ background: "#DAF3FF" }}>
           < ArrowRightOutlinedIcon fontSize="small"/>
           <ListItemText primary={cur.data} />
-          <ExpandMore />
+          {open ? <ExpandLess /> : <ExpandMore /> }
+
         </ListItemButton>
-        <Collapse  in="true" timeout="auto" unmountOnExit>
+        <Collapse  in={open}timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <TableHead style={{display: "flex", fontSize: "15px", justifyContent: "space-between"}}>
                 <div style={{display:"contents" }}>
-                  {/* {handle(cur.data)} */}
-                  <Fire_rating/>
-                  <Sprinkler/>
+                  {displayAll(cur.data)}
                 </div>
             </TableHead>
           </List>
@@ -72,7 +96,7 @@ export const Dss= (props) => {
            <div style={{ display:"contents" }}>
             <List sx={{  width: "100%", maxWidth: 360}} component="nav" aria-labelledby="nested-list-subheader">
               <ListItemButton style={{ background: "#1976d2", color:"white",  borderRadius:"10px 10px 0px 0px" }}>
-                <ListItemText primary="Properties" />
+                <ListItemText primary="DSS" />
                 <ExpandMore/>
               </ListItemButton>
               <Collapse in="true" timeout="auto" unmountOnExit>

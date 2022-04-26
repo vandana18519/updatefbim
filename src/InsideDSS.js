@@ -28,7 +28,6 @@ export const InsideDSS = (props) => {
   ];
   const getAlldss = () => {
     return dss_data.map((cur) => {
-      console.log("Print: ",cur.data);
       <>
          <ListItemButton style={{ background: "#DAF3FF" }}>
           < ArrowRightOutlinedIcon fontSize="small"/>
@@ -45,12 +44,10 @@ export const InsideDSS = (props) => {
       </>
     });
   }
-  // return dss_data.map((current) => {   
       return (
         <>
         {getAlldss()}
         </>             
         )
-  
 };
 export default InsideDSS;
