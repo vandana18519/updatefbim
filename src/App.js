@@ -14,7 +14,7 @@ import { actionCreators } from "./state/index";
 
 function App() {
   const state = useSelector((state) => state);
-  console.log("state", state);
+  // console.log("state", state);
   const dispatch = useDispatch();
   const { setIndex } = bindActionCreators(actionCreators, dispatch);
   return (

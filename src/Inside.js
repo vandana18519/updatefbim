@@ -7,11 +7,9 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import TableHead from '@mui/material/TableHead';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableCell from '@mui/material/TableCell';
 import Tablecells from './Tablecells';
 import data from './data.json';
-import { CurrencyBitcoin, CurrencyYenTwoTone } from "@mui/icons-material";
-import FileOpenIcon from '@mui/icons-material/FileOpen';
 
 export const Inside = () => {
   let arr = [];
@@ -32,19 +30,23 @@ export const Inside = () => {
       });
   };
   const [open, setOpen] = useState(false);
-  const handleClick = () => {
+  const [nameOpen, setNameOpen] = useState("");
+  const handleClick = (props) => {
     setOpen(!open);
-    console.log(open);
+    setNameOpen(props);
+
+    // console.log("Props: ", props);
   };
   return arr.map((current) => {
       return(
         <>
-          <ListItemButton onClick={() => handleClick(console.log())} style={{ background: "#DAF3FF " }}>
+          <ListItemButton onClick={() => handleClick(current)} style={{ background: "#DAF3FF " }}>
             < ArrowRightOutlinedIcon fontSize="small"/>
             <ListItemText primary={current}/>
-            {open ? <ExpandLess /> : <ExpandMore />}
+            {/* {nameOpen == current ? <ExpandLess /> : <ExpandMore />} */}
+            {open && nameOpen == current ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
-          <Collapse  in={open} timeout="auto" unmountOnExit>
+          <Collapse  in={open && nameOpen == current} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <TableHead style={{ fontSize: "15px",display:"flex", justifyContent:"space-between"}}>
                   <TableCell size="small" >Id</TableCell>

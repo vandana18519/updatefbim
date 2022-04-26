@@ -5,16 +5,13 @@ import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ExpandLess from "@mui/icons-material/ExpandLess";
-import InsideDSS from "./InsideDSS";
 import TableHead from '@mui/material/TableHead';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import FireRating from "./dss/FireRating";
 import Sprinkler from "./dss/Sprinkler";
 import Compartment from "./dss/Compartment";
 import FireDoor from "./dss/FireDoor";
+import StatusButton from "./dss/StatusButton";
 
 export const Dss= (props) => {
   const dss_data = [
@@ -44,9 +41,11 @@ export const Dss= (props) => {
     }
   ];
   const [open, setOpen] = useState(false);
+  const [nameOpen, setNameOpen] = useState("");
   const handleClick = (props) => {
     
       setOpen(!open);
+      setNameOpen(props);
  
   };
   const displayAll = (props) => {
@@ -76,10 +75,11 @@ export const Dss= (props) => {
          <ListItemButton onClick={() => handleClick(cur.data)} style={{ background: "#DAF3FF" }}>
           < ArrowRightOutlinedIcon fontSize="small"/>
           <ListItemText primary={cur.data} />
-          {open ? <ExpandLess /> : <ExpandMore /> }
+          <StatusButton/>
+          {open && nameOpen == cur.data ? <ExpandLess /> : <ExpandMore />}
 
         </ListItemButton>
-        <Collapse  in={open}timeout="auto" unmountOnExit>
+        <Collapse  in={open && nameOpen == cur.data}timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <TableHead style={{display: "flex", fontSize: "15px", justifyContent: "space-between"}}>
                 <div style={{display:"contents" }}>

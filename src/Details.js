@@ -3,7 +3,7 @@ import Data from './data.json';
 export const Details = (props) => {
     
     const count = Data.params[props.value.data];
-    console.log("0000___: ",count);
+    // console.log("0000___: ",count);
     return (
         <div style={{color:"grey", fontStyle: 'oblique', fontFamily:'Andale Mono'}}>
             <div>Element Name: {count.element}</div><br/>

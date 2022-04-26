@@ -1,5 +1,5 @@
 export const setIndex = (index) => {
-    console.log("index",index);
+    // console.log("index",index);
     return (dispatch) => {
         dispatch({
             type: "setIndex",
@@ -7,3 +7,4 @@ export const setIndex = (index) => {
         });
     }
 }
+

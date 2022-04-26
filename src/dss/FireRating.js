@@ -8,7 +8,7 @@ const FireRating = () => {
         <TextField sx={{'& > :not(style)': { m: 0.5, width: '8ch', height:'5ch'}}} id="standard-basic" label="Height" variant="standard" />
         < TextField sx={{'& > :not(style)': { m: 0.5, width: '8ch' , height:'5ch'}}} id="standard-basic" label="Width" variant="standard" />
         <div style={{display:'-webkit-inline-flex', fontStyle: 'oblique',fontSize: '20px', alignItems: 'center'}}>
-          <ButtonComp/>
+          <ButtonComp value={"FireRating"}/>
         </div>
       </div>
     )
