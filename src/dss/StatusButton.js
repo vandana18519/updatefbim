@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './ButtonComp.css';
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
-import DoneIcon from '@mui/icons-material/Done';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 const StatusButton= () => {
     const [state, setState] = useState(true);
@@ -12,8 +12,8 @@ const StatusButton= () => {
     
     return (
         <div className={'toggleClass'}>
-            <div style={{color:'grey'}}>
-                {state?<QuestionMarkIcon/>:<DoneIcon/>}
+            <div >
+                {state?<HelpOutlineIcon sx={{color:"red"}}/>:<CheckCircleOutlineIcon sx={{color:"green"}}/>}
             </div>
         </div>
     )

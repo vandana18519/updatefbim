@@ -77,7 +77,6 @@ export const Dss= (props) => {
           <ListItemText primary={cur.data} />
           <StatusButton/>
           {open && nameOpen == cur.data ? <ExpandLess /> : <ExpandMore />}
-
         </ListItemButton>
         <Collapse  in={open && nameOpen == cur.data}timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
@@ -96,7 +95,7 @@ export const Dss= (props) => {
            <div style={{ display:"contents" }}>
             <List sx={{  width: "100%", maxWidth: 360}} component="nav" aria-labelledby="nested-list-subheader">
               <ListItemButton style={{ background: "#1976d2", color:"white",  borderRadius:"10px 10px 0px 0px" }}>
-                <ListItemText primary="DSS" />
+                <ListItemText primary="Elements" />
                 <ExpandMore/>
               </ListItemButton>
               <Collapse in="true" timeout="auto" unmountOnExit>

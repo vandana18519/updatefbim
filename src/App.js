@@ -26,21 +26,18 @@ function App() {
         </div >
         <div style={{height:"100%", width:"80%"}}>
           <div style={{display:"flex", height:"50%", width:"100%"}}>
-            <div style={{ height:"600px", width:"80%",border: '5px ridge #DAF3FF'}}>
-            <FloorImage />
+            <div style={{ height:"580px", width:"80%",border: '5px ridge #DAF3FF'}}>
+              <FloorImage />
+              <div style={{ width:"100%", display:"flex", zIndex:'2'}}>
+                <CalculateButton/>
+                <CalculateButton/>
+              </div>
             </div>
-            <div style={{ height:"600px", width:"20%", overflow:"scroll"}}>
+            <div style={{ height:"580px", width:"20%", overflow:"scroll"}}>
             <Properties/>
             </div>
           </div>
-          <div style={{display:"flex", height:"10%", width:"100%"}}>
-            <div style={{ width:"39.25%"}}>
-              <CalculateButton/>
-            </div>
-            <div style={{ width:"39.25%"}}>
-            <CalculateButton/>
-            </div>
-          </div>
+
           <div style={{display:"flex", height:"25%", width:"100%"}}>
             <div style={{ height:"250px", width:"33%", border: '5px ridge #DAF3FF',borderRadius: '3px'}}>
               <Details value={state}/>
