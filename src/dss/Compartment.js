@@ -2,21 +2,55 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import ButtonComp from './ButtonComp';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const Compartment= () => {
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-    return (
-        <div style={{display:"block" }}>
-            <div style={{display:'-webkit-inline-flex', fontStyle: 'oblique',fontSize: '20px', alignItems: 'center'}}>
-            Compartment: <ButtonComp />
-            </div>
-            <div style={{display:'-webkit-inline-flex', fontStyle: 'oblique',fontSize: '20px', alignItems: 'center'}}>
-            Compartment: <ButtonComp/>
-            </div>
-            <div style={{display:'-webkit-inline-flex', fontStyle: 'oblique',fontSize: '20px', alignItems: 'center'}}>
-            Compartment: <ButtonComp/>
-            </div> 
-        </div>
-    )
-}
-export default Compartment;
+
+export default class Compartment extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        newItem: "",
+        list: []
+      };
+    }
+  
+  
+    addItem() {
+        console.log("newItem.value");
+      const newItem = {
+        id: 1 + Math.random(),
+        // value: 1 + Math.random()
+      };
+      const list = [...this.state.list];
+      list.push(newItem);
+      this.setState({
+        list,
+        newItem: ""
+      });
+    }
+
+    render() {
+      return (
+        <div>
+            <button onClick={() => this.addItem()} > 
+              <i class="material-icons"> + </i>
+            </button>
+            <br /> <br />
+            <ul>
+              {this.state.list.map(item => {
+                return (
+                    <div key={item.id} style={{display:'-webkit-inline-flex', fontStyle: 'oblique',fontSize: '20px', alignItems: 'center'}}>
+                        Compartment: <ButtonComp/>
+                    </div>
+                );
+              })}
+            </ul>
+          </div>
+      );
+    }
+  }
+  
+  ReactDOM.render(<Compartment />, document.getElementById('root'));
+
+//   disabled={!this.state.newItem.length}
