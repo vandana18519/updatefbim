@@ -10,6 +10,7 @@ import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import FireRating from "./dss/FireRating";
 import Sprinkler from "./dss/Sprinkler";
 import Compartment from "./dss/Compartment";
+import Stair from "./dss/Stair";
 import FireDoor from "./dss/FireDoor";
 import StatusButton from "./dss/StatusButton";
 
@@ -31,7 +32,7 @@ export const Dss= (props) => {
       data:"Distance"
     },
     {
-      data:"Number of stair and protection"
+      data:"Stair"
     },
     {
       data:"Means of warning"
@@ -65,6 +66,11 @@ export const Dss= (props) => {
         } if(props == "Firedoor"){
           return(
             <FireDoor/>
+          )
+        }
+        if(props == "Stair"){
+          return(
+            <Stair/>
           )
         }
   };
